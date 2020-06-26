@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./Assets/style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -29,7 +30,22 @@
             <!-- side section -->
             <div class="col-md-3">
                 <h6>Search for city</h6>
-                <input type="text">
+                <form class="search-form">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <br>
+                <br>
+                <!--list -->
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active">
+                      Santa Clara
+                    </button>
+                    <button type="button" class="list-group-item list-group-item-action">Austin</button>
+                    <button type="button" class="list-group-item list-group-item-action">Dubai</button>
+                    <button type="button" class="list-group-item list-group-item-action" disabled>Bangalore</button>
+                  </div>
+
             </div>
 
             <!--display section-->
@@ -40,16 +56,16 @@
                     <div class="card-body">
                         <h4 class="card-title">Santa Clara</h4>
 
-                        <p class="card-text">Tempreture: &nbsp; 
+                        <p class="card-text">Tempreture: &nbsp;
                             <span></span>
                         </p>
-                        <p class="card-text">Humidity: &nbsp; 
+                        <p class="card-text">Humidity: &nbsp;
                             <span></span>
                         </p>
-                        <p class="card-text">Wind Speed: &nbsp; 
+                        <p class="card-text">Wind Speed: &nbsp;
                             <span></span>
                         </p>
-                        <p class="card-text">UV Index: &nbsp; 
+                        <p class="card-text">UV Index: &nbsp;
                             <span></span>
                         </p>
                     </div>
@@ -62,46 +78,46 @@
                     <!-- card group -->
                     <div class="card-group">
                         <div class="card bg-primary text-white">
-                          <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Humidity</p>
-                          </div>
-                        </div>
-                        <div class="card spacing-left-card bg-primary text-white">
-                          <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Humidity:</p>
-                          </div>
-                        </div>
-                        <div class="card spacing-left-card bg-primary text-white">
-                          <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Temp:</p>
-                            <p class="card-text">Humidity:</p>
-                          </div>
+                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity</p>
+                            </div>
                         </div>
                         <div class="card spacing-left-card bg-primary text-white">
                             <!--<img class="card-img-top" src="..." alt="Card image cap">-->
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Temp:</p>
-                              <p class="card-text">Humidity:</p>
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
                             </div>
-                          </div>
-                          <div class="card spacing-left-card bg-primary text-white">
+                        </div>
+                        <div class="card spacing-left-card bg-primary text-white">
                             <!--<img class="card-img-top" src="..." alt="Card image cap">-->
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Temp:</p>
-                              <p class="card-text">Humidity</p>
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
                             </div>
-                          </div>
-                      </div>
+                        </div>
+                        <div class="card spacing-left-card bg-primary text-white">
+                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
+                            </div>
+                        </div>
+                        <div class="card spacing-left-card bg-primary text-white">
+                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
