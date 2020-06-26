@@ -1,22 +1,132 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./Assets/style.css">
     <title>Weather Dashboard</title>
-  </head>
-  <body>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="jumbotron jumbotron-fluid bg-dark bg h-25">
+        <div class="container">
+            <h1 class="display-4 bold">Weather Dashboard</h1>
+            <p class="lead">Look here to get the weather details.
+            </p>
+        </div>
+    </div>
+
+    <main class="container-fluid">
+        <div class="row">
+            <!-- side section -->
+            <div class="col-md-3">
+                <h6>Search for city</h6>
+                <input type="text">
+            </div>
+
+            <!--display section-->
+            <div class="col-md-9">
+
+                <!--card-->
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Santa Clara</h4>
+
+                        <p class="card-text">Tempreture: &nbsp; 
+                            <span></span>
+                        </p>
+                        <p class="card-text">Humidity: &nbsp; 
+                            <span></span>
+                        </p>
+                        <p class="card-text">Wind Speed: &nbsp; 
+                            <span></span>
+                        </p>
+                        <p class="card-text">UV Index: &nbsp; 
+                            <span></span>
+                        </p>
+                    </div>
+                </div>
+                <br>
+                <!--Five day forecast-->
+                <div>
+                    <h4>Five Day Forecast</h4>
+
+                    <!-- card group -->
+                    <div class="card-group">
+                        <div class="card bg-primary text-white">
+                          <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Humidity</p>
+                          </div>
+                        </div>
+                        <div class="card spacing-left-card bg-primary text-white">
+                          <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Humidity:</p>
+                          </div>
+                        </div>
+                        <div class="card spacing-left-card bg-primary text-white">
+                          <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Humidity:</p>
+                          </div>
+                        </div>
+                        <div class="card spacing-left-card bg-primary text-white">
+                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Temp:</p>
+                              <p class="card-text">Humidity:</p>
+                            </div>
+                          </div>
+                          <div class="card spacing-left-card bg-primary text-white">
+                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Temp:</p>
+                              <p class="card-text">Humidity</p>
+                            </div>
+                          </div>
+                      </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--footer-->
+    <div class="container-fluid no-pad">
+        <footer class="bg-dark text-white">
+            &#64;Copyright
+        </footer>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="./Assets/script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,25 @@
+.bg{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzTWr8bZbENMxTn3humJfG0STIJW9jVnEytw&usqp=CAU');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bold{
+    font-weight: 400;
+}
+
+.spacing-left-card{
+    margin-left: 1% !important;
+    border-left: 1px solid rgba(0,0,0,.125) !important;
+}
+
+.no-pad{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+footer{
+    margin-top: 15px;
+    height: 30px;
+    text-align: center;
+}
