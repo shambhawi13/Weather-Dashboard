@@ -31,16 +31,13 @@
             <div class="col-md-3">
                 <h6>Search for city</h6>
                 <form class="search-form">
-                    <input type="text" placeholder="Search.." name="search">
+                    <input type="text" placeholder="Search.." name="search" id="input-city">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
                 <br>
                 <br>
                 <!--list -->
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action active">
-                      Santa Clara
-                    </button>
                     <button type="button" class="list-group-item list-group-item-action">Austin</button>
                     <button type="button" class="list-group-item list-group-item-action">Dubai</button>
                     <button type="button" class="list-group-item list-group-item-action" disabled>Bangalore</button>
@@ -54,15 +51,15 @@
                 <!--card-->
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Santa Clara</h4>
+                        <h4 class="card-title selected-city">Santa Clar</h4>
 
-                        <p class="card-text">Tempreture: &nbsp;
+                        <p class="card-text current-temp">Tempreture: &nbsp;
                             <span></span>
                         </p>
-                        <p class="card-text">Humidity: &nbsp;
+                        <p class="card-text current-humidity">Humidity: &nbsp;
                             <span></span>
                         </p>
-                        <p class="card-text">Wind Speed: &nbsp;
+                        <p class="card-text current-wind-speed">Wind Speed: &nbsp;
                             <span></span>
                         </p>
                         <p class="card-text">UV Index: &nbsp;
@@ -142,6 +139,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./Assets/script.js"></script>
 </body>
 
