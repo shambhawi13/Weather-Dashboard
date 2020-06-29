@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
     <link rel="stylesheet" href="./Assets/style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -38,10 +39,11 @@
                 <br>
                 <!--list -->
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action">Austin</button>
-                    <button type="button" class="list-group-item list-group-item-action">Dubai</button>
-                    <button type="button" class="list-group-item list-group-item-action" disabled>Bangalore</button>
-                  </div>
+                    <button type="button" class="list-group-item list-group-item-action city">Austin</button>
+                    <button type="button" class="list-group-item list-group-item-action city">Dubai</button>
+                    <button type="button" class="list-group-item list-group-item-action city"
+                        disabled>Bangalore</button>
+                </div>
 
             </div>
 
@@ -51,18 +53,18 @@
                 <!--card-->
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title selected-city">Santa Clar</h4>
+                        <h4 class="card-title selected-city">City Not Selected</h4>
 
                         <p class="card-text current-temp">Tempreture: &nbsp;
-                            <span></span>
+                        <span class="hide">&deg; F</span> 
                         </p>
                         <p class="card-text current-humidity">Humidity: &nbsp;
-                            <span></span>
+                            <span class="hide">&#37;</span>
                         </p>
                         <p class="card-text current-wind-speed">Wind Speed: &nbsp;
-                            <span></span>
+                            <span class="hide">MPH</span>
                         </p>
-                        <p class="card-text">UV Index: &nbsp;
+                        <p class="card-text uv">UV Index: &nbsp;
                             <span></span>
                         </p>
                     </div>
@@ -73,47 +75,7 @@
                     <h4>Five Day Forecast</h4>
 
                     <!-- card group -->
-                    <div class="card-group">
-                        <div class="card bg-primary text-white">
-                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity</p>
-                            </div>
-                        </div>
-                        <div class="card spacing-left-card bg-primary text-white">
-                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
-                        <div class="card spacing-left-card bg-primary text-white">
-                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
-                        <div class="card spacing-left-card bg-primary text-white">
-                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
-                        <div class="card spacing-left-card bg-primary text-white">
-                            <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity</p>
-                            </div>
-                        </div>
+                    <div class="card-group forecast-section">
                     </div>
 
                 </div>

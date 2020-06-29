@@ -54,3 +54,17 @@ footer{
     height: 30px;
     text-align: center;
 }
+
+.hide{
+  display: none;
+}
+
+.not-harmful{
+  background-color: green;
+  padding: 2px;
+}
+
+.harmful{
+  background-color: red;
+  padding: 2px;
+}
