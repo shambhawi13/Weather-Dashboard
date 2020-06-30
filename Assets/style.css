@@ -72,3 +72,7 @@ footer{
 main{
   height: 100%;
 }
+
+.forecast-display-section{
+  visibility: hidden;
+}

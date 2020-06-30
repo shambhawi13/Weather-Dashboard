@@ -64,7 +64,7 @@ function displayWeatherCondition(inputCity) {
     clearContent();
     formattedInputCity = inputCity.split(' ').join('+');
     var queryURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + formattedInputCity + '&units=metric' + '&appid=' + appId
-
+    $('.forecast-display-section').attr('style','visibility: visible')
     console.log(inputCity, queryURL);
     $.ajax({
         url: queryURL,
