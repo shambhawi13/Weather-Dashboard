@@ -39,10 +39,12 @@
                 <br>
                 <!--list -->
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action city">Austin</button>
-                    <button type="button" class="list-group-item list-group-item-action city">Dubai</button>
-                    <button type="button" class="list-group-item list-group-item-action city"
-                        disabled>Bangalore</button>
+                    <!-- <button type="button" data-city="austin"
+                        class="list-group-item list-group-item-action city">Austin</button>
+                    <button type="button" data-city="dubai"
+                        class="list-group-item list-group-item-action city">Dubai</button>
+                    <button type="button" data-city="bangalore" class="list-group-item list-group-item-action city"
+                        disabled>Bangalore</button> -->
                 </div>
 
             </div>
@@ -55,17 +57,17 @@
                     <div class="card-body">
                         <h4 class="card-title selected-city">City Not Selected</h4>
 
-                        <p class="card-text current-temp">Tempreture: &nbsp;
-                        <span class="hide">&deg; F</span> 
+                        <p class="card-text current-temp">
+                            <span class="current-temp-label">Tempreture: &nbsp;</span>
                         </p>
-                        <p class="card-text current-humidity">Humidity: &nbsp;
-                            <span class="hide">&#37;</span>
+                        <p class="card-text current-humidity">
+                            <span>Humidity: &nbsp;</span>
                         </p>
-                        <p class="card-text current-wind-speed">Wind Speed: &nbsp;
-                            <span class="hide">MPH</span>
+                        <p class="card-text current-wind-speed">
+                            <span>Wind Speed: &nbsp;</span>
                         </p>
-                        <p class="card-text uv">UV Index: &nbsp;
-                            <span></span>
+                        <p class="card-text uv">
+                            <span>UV Index: &nbsp;</span>
                         </p>
                     </div>
                 </div>

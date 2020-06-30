@@ -13,9 +13,55 @@ var latitude;
 var longitude;
 var formattedInputCity;
 
+// if there is no item in local storage initialize empty array
+if(!JSON.parse(localStorage.getItem('city-list'))){
+    localStorage.setItem('city-list',JSON.stringify([]));
+}
+else{
+    cityList = JSON.parse(localStorage.getItem('city-list'));
+}
+
+populateList();
+
 $('.search-form').on('submit', function (event) {
     event.preventDefault();
-    var inputCity = $('#input-city').val();
+    let inputCity = $('#input-city').val();
+    displayWeatherCondition(inputCity);
+    $('#input-city').empty();
+});
+
+$(document).on('click', '.city', function (event) {
+    //console.log(event.target.getAttribute('data-city') , $(event));
+    let inputCity = event.target.getAttribute('data-city');
+    displayWeatherCondition(inputCity);
+    $(event.target).addClass('active');
+})
+
+function clearContent() {
+    $('#input-city').empty();
+    $('.selected-city').empty();
+    $('.current-temp').text('').empty()
+    $('.current-humidity').empty();
+    $('.current-wind-speed').empty();
+    $('.uv').empty();
+    $('.forecast-section').empty();
+    $('.city').removeClass('active');
+}
+
+function populateList() {
+    $('.list-group').empty();
+    let cities = JSON.parse(localStorage.getItem('city-list'));
+    for (let city = 0; city < cities.length; city++) {
+        let list = $('<button type="button" class="list-group-item list-group-item-action city">');
+        $(list).text(cities[city]);
+        $(list).attr('data-city', cities[city]);
+        $('.list-group').prepend(list);
+    }
+
+}
+
+function displayWeatherCondition(inputCity) {
+    clearContent();
     formattedInputCity = inputCity.split(' ').join('+');
     var queryURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + formattedInputCity + '&units=metric' + '&appid=' + appId
 
@@ -26,27 +72,38 @@ $('.search-form').on('submit', function (event) {
     }).then(function (response) {
         console.log(response);
         $('.selected-city').text(response.name);
-        $('.current-temp span').removeClass('hide');
-        $('.current-temp span').prepend(response.main.temp);
-        $('.current-humidity span').removeClass('hide');
-        $('.current-humidity span').prepend(response.main.humidity);
-        $('.current-wind-speed span').removeClass('hide');
-        $('.current-wind-speed span').prepend(response.wind.speed);
-        let list = $('<button type="button" class="list-group-item list-group-item-action city">');
-        $(list).text(inputCity);
-        $('city').removeClass('active');
-        $(list).addClass('active');
-        $('.list-group').prepend(list);
-        cityList.push(inputCity);
-        localStorage.setItem('city-list', cityList);
+        $('.current-temp').append('<span">Tempreture: &nbsp;</span>');
+        $('.current-temp').append(response.main.temp);
+        $('.current-temp').append('<span>&deg; F</span>');
 
+        $('.current-humidity').append('<span>Humidity: &nbsp;</span>')
+        $('.current-humidity').append(response.main.humidity);
+        $('.current-humidity').append('<span>&#37;</span>');
+
+        $('.current-wind-speed').append('<span>Wind Speed: &nbsp;</span>');
+        $('.current-wind-speed').append(response.wind.speed);
+        $('.current-wind-speed').append('<span>MPH</span>');
+
+        console.log('yess!!! ' + JSON.parse(localStorage.getItem('city-list')).includes(inputCity));
+        if (JSON.parse(localStorage.getItem('city-list')).includes(inputCity)) {
+            console.log('already there');
+        }
+        else {
+            cityList.push(inputCity);
+            localStorage.setItem('city-list', JSON.stringify(cityList));
+            populateList();
+            setTimeout(function(){
+                $('button[data-city =' + inputCity + ']').addClass('active');
+            },100);
+            
+        }
         //request server to get UV index
         latitude = response.coord.lat;
         longitude = response.coord.lon;
         getUVIndex(latitude, longitude);
         getForecast();
     });
-});
+}
 
 function getUVIndex(lat, lon) {
     let queryURLUV = 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + appId;
@@ -56,19 +113,23 @@ function getUVIndex(lat, lon) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        $('.uv span').append(response.value);
-        if(response.value > 6){
-            $('.uv span').addClass('harmful')
+        $('.uv').append('<span>UV Index: &nbsp;</span>');
+        $('.uv').append('<span class="uv-value"></span>');
+        var uvValue = $('.uv-value');
+        uvValue.text(response.value)
+
+        if (response.value > 6) {
+            $(uvValue).addClass('harmful')
         }
-        else{
-            $('.uv span').addClass('not-harmful')
+        else {
+            $(uvValue).addClass('not-harmful')
         }
     })
 
 }
 
 function getIcon(icon, elem) {
-    let iconURL = 'http://openweathermap.org/img/wn/'+icon+'@2x.png'
+    let iconURL = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
     elem.attr('src', iconURL);
 }
 
@@ -106,7 +167,7 @@ function getForecast() {
 
             let cardTempElement = $('<p class="card-text temp">')
             cardBodyEl.append(cardTempElement);
-            cardTempElement.text('Temp: ' + foreResults[i].main.temp + 'F');
+            cardTempElement.html('Temp: ' + foreResults[i].main.temp + '&deg;F');
 
             let cardHumidEl = $('<p class="card-text humidity">');
             cardBodyEl.append(cardHumidEl);
