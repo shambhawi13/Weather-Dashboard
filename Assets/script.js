@@ -72,7 +72,7 @@ function displayWeatherCondition(inputCity) {
     }).then(function (response) {
         console.log(response);
         $('.selected-city').text(response.name);
-        $('.current-temp').append('<span">Tempreture: &nbsp;</span>');
+        $('.current-temp').append('<span">Temperature: &nbsp;</span>');
         $('.current-temp').append(response.main.temp);
         $('.current-temp').append('<span>&deg; F</span>');
 
