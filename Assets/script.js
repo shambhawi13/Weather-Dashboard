@@ -27,7 +27,7 @@ $('.search-form').on('submit', function (event) {
     event.preventDefault();
     let inputCity = $('#input-city').val();
     displayWeatherCondition(inputCity);
-    $('#input-city').empty();
+    $('#input-city').val('');
 });
 
 $(document).on('click', '.city', function (event) {
