@@ -1,8 +1,8 @@
 /*
 eg: apis
-- http://api.openweathermap.org/data/2.5/weather?q=santa+clara&appid=80e91e7834cea9b00e1d1d34b02e2b23&units=metric
-- http://api.openweathermap.org/data/2.5/uvi?lat=22.4&lon=-79.97&appid=80e91e7834cea9b00e1d1d34b02e2b23
-- http://api.openweathermap.org/data/2.5/forecast?q=santa+clara&appid=80e91e7834cea9b00e1d1d34b02e2b23
+- https://api.openweathermap.org/data/2.5/weather?q=santa+clara&appid=80e91e7834cea9b00e1d1d34b02e2b23&units=metric
+- https://api.openweathermap.org/data/2.5/uvi?lat=22.4&lon=-79.97&appid=80e91e7834cea9b00e1d1d34b02e2b23
+- https://api.openweathermap.org/data/2.5/forecast?q=santa+clara&appid=80e91e7834cea9b00e1d1d34b02e2b23
 
 */
 
@@ -63,7 +63,7 @@ function populateList() {
 function displayWeatherCondition(inputCity) {
     clearContent();
     formattedInputCity = inputCity.split(' ').join('+');
-    var queryURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + formattedInputCity + '&units=metric' + '&appid=' + appId
+    var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + formattedInputCity + '&units=metric' + '&appid=' + appId
     $('.forecast-display-section').attr('style','visibility: visible')
     console.log(inputCity, queryURL);
     $.ajax({
@@ -106,7 +106,7 @@ function displayWeatherCondition(inputCity) {
 }
 
 function getUVIndex(lat, lon) {
-    let queryURLUV = 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + appId;
+    let queryURLUV = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + appId;
 
     $.ajax({
         url: queryURLUV,
@@ -129,13 +129,13 @@ function getUVIndex(lat, lon) {
 }
 
 function getIcon(icon, elem) {
-    let iconURL = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
+    let iconURL = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
     elem.attr('src', iconURL);
 }
 
 function getForecast() {
     var forecastArr = [];
-    let queryURLFore = 'http://api.openweathermap.org/data/2.5/forecast?q=' + formattedInputCity + '&appid=' + appId + '&units=metric';
+    let queryURLFore = 'https://api.openweathermap.org/data/2.5/forecast?q=' + formattedInputCity + '&appid=' + appId + '&units=metric';
     $.ajax({
         url: queryURLFore,
         method: "GET"
